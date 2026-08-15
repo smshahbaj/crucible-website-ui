@@ -1,0 +1,6 @@
+{
+  "name": "Crucible",
+  "description": "Crucible is an adaptive decision-review skill for Claude Code by SM Shahbaj that verifies evidence, challenges weak points, searches for failure modes, and stops when further work is unlikely to change the action.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

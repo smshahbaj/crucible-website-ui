@@ -1,0 +1,74 @@
+# Crucible
+
+> Adaptive decision pressure-testing for Claude Code by SM Shahbaj.
+> "More reasoning is not automatically better. The right amount of reasoning is better."
+
+## Overview
+- **Name:** Crucible
+- **Tagline:** Adaptive decision pressure-testing for Claude Code
+- **One-liner:** A user-friendly adaptive second-opinion skill for Claude Code. For important decisions, plans, strategies, proposals, architecture, and recommendations: frame the real goal, verify decision-critical evidence, pressure-test the biggest risk, compare alternatives, and stop when more reasoning will not change the action.
+- **Version:** 1.0.0
+- **License:** MIT
+- **Author:** SM Shahbaj — contact@smshahbaj.com — https://smshahbaj.com
+- **Repository:** https://github.com/smshahbaj/crucible
+- **Official Website:** https://crucible.smshahbaj.com
+- **Requirements:** Claude Code installed. Python 3.10+ only for optional tests/benchmarks/ledger tools. No database, no API key needed for normal use.
+
+## The 14 Specialist Agents
+1. `claim-compressor`: Isolates atomic factual claims and assertions from context.
+2. `decision-router`: Assigns adaptive depth (QUICK, REVIEW, DEEP) based on stakes, uncertainty, and reversibility.
+3. `decision-strategist`: Structures strategic trade-offs, opportunity costs, and roadmaps.
+4. `evidence-auditor`: Verifies claims against codebase invariants and empirical evidence.
+5. `evidence-gate`: Subjects decision-critical claims to strict validation gates.
+6. `execution-specialist`: Audits implementation hurdles, migrations, and delivery feasibility.
+7. `failure-analyst`: Pre-mortem specialist hunting edge cases and cascading failure modes.
+8. `final-judge`: Synthesizes specialist views into an auditable recommendation.
+9. `option-analyst`: Discovers and evaluates viable alternative architectures.
+10. `quality-controller`: Enforces stop-when-stable rules and convergence quality.
+11. `quantitative-analyst`: Calculates expected value, bounds, and probabilistic risks.
+12. `risk-red-team`: Adversarially probes blind spots and optimistic assumptions.
+13. `source-auditor`: Audits licenses, dependency health, and supply-chain safety.
+14. `verification-planner`: Creates concrete, falsifiable tests to validate assertions.
+
+## 3 Adaptive Review Depths
+- 🟢 **QUICK**: Single-pass review for low-stakes, clear, and easily reversible choices.
+- 🟡 **REVIEW**: Balanced evaluation using 2 independent lenses for decisions with meaningful trade-offs or uncertainty.
+- 🔴 **DEEP**: 3–5 heterogeneous lenses plus targeted verification and challenge, reserved for high downside, conflicting evidence, or irreversible decisions.
+
+## Installation in Claude Code
+
+### Option A — Install from Marketplace (Recommended)
+```text
+/plugin marketplace add smshahbaj/crucible
+/plugin install crucible@crucible-marketplace
+```
+
+### Option B — Local Checkout with --plugin-dir
+```bash
+git clone https://github.com/smshahbaj/crucible.git ~/crucible
+claude --plugin-dir ~/crucible
+```
+
+### Usage
+```text
+/crucible Pressure-test this decision before I commit: should we choose architecture A or B?
+```
+
+## What Crucible Is NOT (Boundaries & Guardrails)
+- Not a promise of perfect answers.
+- Not "run 14 agents on everything".
+- Not a majority-vote truth machine.
+- Not a replacement for primary evidence or qualified professional advice.
+
+## Decision Ledger (Optional Local Storage)
+- Local durable ledger stored at `.crucible/ledger.jsonl`.
+- Add: `python3 scripts/decision_ledger.py --add record.json --ledger .crucible/ledger.jsonl`
+- Render: `python3 scripts/decision_ledger.py --render record.json`
+- Report: `python3 scripts/decision_ledger.py --report --ledger .crucible/ledger.jsonl`
+
+## Context & Discovery
+- [Full LLM Specification](https://crucible.smshahbaj.com/llms-full.txt)
+- [Official Website](https://crucible.smshahbaj.com)
+- [GitHub Repository](https://github.com/smshahbaj/crucible)
+- [Sitemap](https://crucible.smshahbaj.com/sitemap.xml)
+- [RSS Feed](https://crucible.smshahbaj.com/feed.xml)

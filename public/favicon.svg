@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180b2d"/>
+      <stop offset="50%" stop-color="#0a0514"/>
+      <stop offset="100%" stop-color="#05020a"/>
+    </linearGradient>
+    <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#f0abfc"/>
+      <stop offset="70%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background dark rounded square -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  <rect x="12" y="12" width="488" height="488" rx="108" fill="none" stroke="#c084fc" stroke-width="4" stroke-opacity="0.35"/>
+
+  <!-- Eye Graphic -->
+  <g filter="url(#purpleGlow)">
+    <!-- Main Eye Silhouette -->
+    <path d="M140 175 C190 175, 190 225, 256 225 C322 225, 322 175, 372 175 C385 255, 350 365, 256 385 C162 365, 127 255, 140 175 Z" fill="url(#eyeGrad)"/>
+    <!-- Top Notch Cutout -->
+    <path d="M256 115 C280 150, 285 180, 256 205 C227 180, 232 150, 256 115 Z" fill="#0a0514"/>
+    <!-- Center Pupil -->
+    <circle cx="256" cy="280" r="24" fill="#0a0514"/>
+    <!-- Pupil Reflection Dot -->
+    <circle cx="248" cy="272" r="8" fill="#ffffff"/>
+  </g>
+</svg>

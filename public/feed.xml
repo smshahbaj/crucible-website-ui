@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Crucible — Adaptive Decision Pressure-Testing for Claude Code</title>
+    <link>https://crucible.smshahbaj.com/</link>
+    <description>Latest releases, specialist routing methodologies, and architectural updates for Crucible.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://crucible.smshahbaj.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://crucible.smshahbaj.com/assets/logo.webp</url>
+      <title>Crucible</title>
+      <link>https://crucible.smshahbaj.com/</link>
+    </image>
+    <item>
+      <title>Crucible v1.0: 14 Specialist Agents and Stop-When-Stable Decision Engine</title>
+      <link>https://crucible.smshahbaj.com/</link>
+      <guid isPermaLink="true">https://crucible.smshahbaj.com/#v1.0.0</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <dc:creator>SM Shahbaj</dc:creator>
+      <description><![CDATA[Crucible introduces adaptive decision pressure-testing for Claude Code. Includes 14 dedicated specialist agents, dynamic routing, three depth tiers (Quick, Standard, Deep), and automated Decision Ledger logging.]]></description>
+    </item>
+  </channel>
+</rss>

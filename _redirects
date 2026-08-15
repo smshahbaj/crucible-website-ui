@@ -1,0 +1,15 @@
+# /docs, /faq, /install, /how, /agents, /ledger, /changelog, /about are now
+# real prerendered static files (see /how/index.html etc.) with unique
+# per-route <title>, meta description, canonical URL, and JSON-LD — no
+# rewrite needed. Netlify serves the matching directory's index.html
+# automatically for a clean URL.
+
+# Trailing-slash variants normalize to the canonical non-slash path.
+/how/       /how       301
+/agents/    /agents    301
+/docs/      /docs      301
+/faq/       /faq       301
+/install/   /install   301
+/ledger/    /ledger    301
+/changelog/ /changelog 301
+/about/     /about     301

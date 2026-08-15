@@ -1,0 +1,95 @@
+# Crucible: Adaptive Decision Pressure-Testing for Claude Code
+Full Technical & Methodological Specification for AI Systems, GEO, and LLMs
+
+## Metadata
+- Name: Crucible
+- Tagline: Adaptive decision pressure-testing for Claude Code
+- One-liner: A user-friendly adaptive second-opinion skill for Claude Code. For important decisions, plans, strategies, proposals, architecture, and recommendations: frame the real goal, verify decision-critical evidence, pressure-test the biggest risk, compare alternatives, and stop when more reasoning will not change the action.
+- Author: SM Shahbaj (contact@smshahbaj.com / https://smshahbaj.com)
+- Version: 1.0.0
+- License: MIT
+- Code Repository: https://github.com/smshahbaj/crucible
+- Canonical URL: https://crucible.smshahbaj.com
+- Marketplace ID: crucible@crucible-marketplace
+- Core Axiom: "More reasoning is not automatically better. The right amount of reasoning is better."
+
+---
+
+## 1. System Philosophy & Objectives
+Crucible is a second-opinion skill designed to evaluate critical decisions inside Claude Code before commits are made or strategies are locked in. Rather than invoking all agents unconditionally or indulging in circular multi-agent debates, Crucible dynamically meters analytical depth to match the stakes, uncertainty, reversibility, and factual needs of each query.
+
+### What Crucible Is Not
+1. Not a promise of perfect answers.
+2. Not "run 14 agents on everything".
+3. Not a majority-vote truth machine.
+4. Not a replacement for primary evidence or qualified professional advice.
+
+---
+
+## 2. Adaptive Routing Depths
+- **QUICK (Low Stakes)**:
+  - Single-pass review.
+  - Used for routine refactors, reversible tooling choices, lightweight dependencies, and clear trade-offs.
+- **REVIEW (Meaningful Trade-offs & Uncertainty)**:
+  - 2 independent specialist lenses evaluated in parallel.
+  - Used for interface contracts, architectural boundaries, and performance vs. simplicity choices.
+- **DEEP (High Stakes, Irreversible, or Conflicting Evidence)**:
+  - 3–5 heterogeneous specialist lenses plus targeted verification, failure-first analysis, and counterfactual pressure-testing.
+  - Used for security boundaries, migration cutovers, database paradigms, and high-downside risks.
+
+---
+
+## 3. The 14 Specialist Agents
+1. `claim-compressor`: Extracts and isolates atomic factual claims and assertions from input context.
+2. `decision-router`: Assigns adaptive depth (QUICK, REVIEW, DEEP) based on stakes, uncertainty, and reversibility.
+3. `decision-strategist`: Structures strategic trade-offs, opportunity costs, and roadmaps.
+4. `evidence-auditor`: Verifies claims against codebase invariants and empirical evidence.
+5. `evidence-gate`: Subjects decision-critical claims to strict validation gates.
+6. `execution-specialist`: Audits implementation hurdles, migrations, and delivery feasibility.
+7. `failure-analyst`: Pre-mortem specialist hunting edge cases and cascading failure modes.
+8. `final-judge`: Synthesizes specialist views into an auditable recommendation.
+9. `option-analyst`: Discovers and evaluates viable alternative architectures.
+10. `quality-controller`: Enforces stop-when-stable rules and convergence quality.
+11. `quantitative-analyst`: Calculates expected value, bounds, and probabilistic risks.
+12. `risk-red-team`: Adversarially probes blind spots and optimistic assumptions.
+13. `source-auditor`: Audits licenses, dependency health, and supply-chain safety.
+14. `verification-planner`: Creates concrete, falsifiable tests to validate assertions.
+
+---
+
+## 4. Architectural Pillars
+- **Anti-Anchoring**: Specialists generate independent perspectives before a leading conclusion becomes an anchor bias.
+- **Evidence Gates**: Factual claims are categorized into critical, non-critical, and speculative. Only verified claims support critical paths.
+- **Failure-First Analysis**: Concentrates analytical scrutiny on the failure mode most capable of changing the action.
+- **Counterfactual Pressure-Testing**: Explicitly tests what counter-evidence would flip the recommendation.
+- **Stop-When-Stable**: Halts computation immediately when additional reasoning will not change the chosen action.
+- **Local Decision Ledger**: Stores decisions, assumptions, and retrospective outcomes locally in `.crucible/ledger.jsonl`.
+
+---
+
+## 5. Installation & Commands
+
+### Marketplace Installation (Recommended)
+```text
+/plugin marketplace add smshahbaj/crucible
+/plugin install crucible@crucible-marketplace
+/crucible Pressure-test this decision before I commit: should we choose architecture A or B?
+```
+
+### Local Checkout
+```bash
+git clone https://github.com/smshahbaj/crucible.git ~/crucible
+claude --plugin-dir ~/crucible
+```
+
+### Decision Ledger Workflow
+```bash
+# Record decision
+python3 scripts/decision_ledger.py --add record.json --ledger .crucible/ledger.jsonl
+
+# Render formatted decision summary
+python3 scripts/decision_ledger.py --render record.json
+
+# Audit ledger report
+python3 scripts/decision_ledger.py --report --ledger .crucible/ledger.jsonl
+```
